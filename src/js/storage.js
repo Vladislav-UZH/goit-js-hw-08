@@ -20,7 +20,7 @@ const loadLocalStorage = (key) => {
 const removeLocalStorage = (key) => {
     try {
         localStorage.removeItem(key)
-      console.log(`This name: -${key}- was removed, -${key}-: ${localStorage.getItem(key)}`);   
+      console.log(`This key: -${key}- was removed, -${key}-: ${localStorage.getItem(key)}`);   
     } catch (error) {
         console.log('Remove state error:',error.message);
     }
