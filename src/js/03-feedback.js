@@ -25,7 +25,7 @@ refs.form.addEventListener('input', throttle(onEnteringToInput, 500))
 function onSubmit(ev) {
     ev.preventDefault();
     dataLogger({
-        inputValue: refs.input.value, feedbackValue: refs.textarea.value
+        email: refs.input.value, message: refs.textarea.value
     });
     ev.currentTarget.reset();
     removeLocalStorage(FEEDBACK_LOCAL_STORAGE_KEY);
@@ -49,7 +49,7 @@ function populateForm() {
     refs.input.value = inputValue;
     refs.textarea.value = feedbackValue;
 }
-function dataLogger({inputValue,feedbackValue}={}) {
+function dataLogger({email,message}={}) {
     
-    return console.log({inputValue,feedbackValue});
+    return console.log({email,message});
 }
