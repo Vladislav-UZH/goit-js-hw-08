@@ -24,11 +24,14 @@ refs.form.addEventListener('input', throttle(onEnteringToInput, 500))
 
 function onSubmit(ev) {
     ev.preventDefault();
-    dataLogger({
+    if (refs.input.value && refs.textarea.value) {
+         dataLogger({
         email: refs.input.value, message: refs.textarea.value
     });
     ev.currentTarget.reset();
     removeLocalStorage(FEEDBACK_LOCAL_STORAGE_KEY);
+    }
+   return
 }
 populateForm();
 
